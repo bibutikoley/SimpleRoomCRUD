@@ -3,6 +3,7 @@ package dev.bibuti.rupeecircle;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import java.util.Collections;
@@ -24,6 +25,8 @@ public class ViewAllUsersActivity extends AppCompatActivity
     RecyclerView usersRV;
     @BindView(R.id.emptyLayout)
     LinearLayout emptyLayout;
+    @BindView(R.id.toolbarBTN)
+    ImageButton toolbarBTN;
 
     UserViewModel userViewModel;
 
@@ -42,6 +45,7 @@ public class ViewAllUsersActivity extends AppCompatActivity
         usersRV.setHasFixedSize(true);
         usersRV.setLayoutManager(new LinearLayoutManager(this));
         usersRV.setAdapter(userAdapter);
+
         userViewModel.getAllUsers().observe(this, users -> {
             userAdapter.updateUsers(users);
             if (users.size() == 0) {
@@ -51,6 +55,10 @@ public class ViewAllUsersActivity extends AppCompatActivity
                 emptyLayout.setVisibility(View.INVISIBLE);
                 usersRV.setVisibility(View.VISIBLE);
             }
+        });
+
+        toolbarBTN.setOnClickListener(v -> {
+            onBackPressed();
         });
     }
 

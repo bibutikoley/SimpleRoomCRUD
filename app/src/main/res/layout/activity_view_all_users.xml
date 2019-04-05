@@ -5,10 +5,33 @@
     android:layout_height="match_parent"
     tools:context=".ViewAllUsersActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/ToolbarStyle">
+
+        <ImageButton
+            android:id="@+id/toolbarBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:paddingStart="@dimen/ic_nav_padding_start"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            style="@style/LabelStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:text="Welcome" />
+
+    </androidx.appcompat.widget.Toolbar>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/usersRV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -16,5 +39,9 @@
 
     <include
         layout="@layout/empty_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
         tools:visibility="gone" />
+
 </RelativeLayout>

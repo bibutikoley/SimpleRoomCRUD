@@ -61,25 +61,41 @@
 
         <TextView
             android:id="@+id/singleUserDeleteTV"
-            style="@style/LabelStyle"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
             android:background="@drawable/solid_bg"
             android:drawableStart="@drawable/ic_delete"
+            android:drawablePadding="8dp"
             android:gravity="center"
             android:padding="8dp"
             android:text="Delete User"
             android:textColor="@color/divider"
-            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/singleUserViewTV"
+            app:layout_constraintTop_toBottomOf="@+id/singleUserEmailTV"
+            app:layout_constraintVertical_bias="0.529"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/singleUserViewTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/stroke_bg"
+            android:drawableStart="@drawable/ic_view"
+            android:drawablePadding="8dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="View"
+            android:textColor="@color/orange"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/singleUserDeleteTV"
             app:layout_constraintStart_toEndOf="@+id/singleUserIV"
             app:layout_constraintTop_toBottomOf="@+id/singleUserEmailTV"
-            tools:ignore="ContentDescription" />
+            app:layout_constraintVertical_bias="1.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

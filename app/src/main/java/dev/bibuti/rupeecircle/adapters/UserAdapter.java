@@ -41,25 +41,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
 
         holder.singleUserEmailTV.setText(singleUser.getEmail());
 
-        holder.singleUserNameTV.setOnClickListener(v -> {
-            if (onUserAdapterClickListener != null) {
-                onUserAdapterClickListener.onNormalViewClicked(singleUser);
-            } else {
-                //Listener on Attached..
-                Helper.log("Helper = Listener not attached");
-            }
-        });
-
-        holder.singleUserIV.setOnClickListener(v -> {
-            if (onUserAdapterClickListener != null) {
-                onUserAdapterClickListener.onNormalViewClicked(singleUser);
-            } else {
-                //Listener on Attached..
-                Helper.log("Helper = Listener not attached");
-            }
-        });
-
-        holder.singleUserEmailTV.setOnClickListener(v -> {
+        holder.singleUserViewTV.setOnClickListener(v -> {
             if (onUserAdapterClickListener != null) {
                 onUserAdapterClickListener.onNormalViewClicked(singleUser);
             } else {
@@ -105,6 +87,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         TextView singleUserEmailTV;
         @BindView(R.id.singleUserDeleteTV)
         TextView singleUserDeleteTV;
+        @BindView(R.id.singleUserViewTV)
+        TextView singleUserViewTV;
 
         UserViewHolder(@NonNull View itemView) {
             super(itemView);
