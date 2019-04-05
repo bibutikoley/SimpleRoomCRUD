@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DataActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/ToolbarStyle">
+
+            <ImageButton
+                android:id="@+id/toolbarBTN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:paddingStart="@dimen/ic_nav_padding_start"
+                android:src="@drawable/ic_back" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <RelativeLayout
+            android:id="@+id/containerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:layout_margin="@dimen/container_layout_margin">
+
+            <TextView
+                android:id="@+id/signup_title"
+                style="@style/LabelStyle"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:text="You are viewing Data"
+                android:textColor="@color/orange" />
+
+            <TextView
+                android:id="@+id/signup_welcome_msg"
+                style="@style/LabelStyle"
+                android:layout_below="@id/signup_title"
+                android:layout_marginTop="16dp"
+                android:text="You can edit any field\nFeel free todo so." />
+
+            <EditText
+                android:id="@+id/et_full_name"
+                style="@style/EditTextStyle"
+                android:layout_below="@id/signup_welcome_msg"
+                android:layout_marginTop="16dp"
+                android:hint="@string/full_name_hint"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/et_email_address"
+                style="@style/EditTextStyle"
+                android:layout_below="@id/et_full_name"
+                android:layout_marginTop="16dp"
+                android:hint="@string/email_address_hint"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/et_password"
+                style="@style/EditTextStyle"
+                android:layout_below="@id/et_email_address"
+                android:layout_marginTop="16dp"
+                android:hint="@string/password_hint"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/et_confirm_password"
+                style="@style/EditTextStyle"
+                android:layout_below="@id/et_password"
+                android:layout_marginTop="16dp"
+                android:hint="@string/confirm_password_hint"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/et_mobile"
+                style="@style/EditTextStyle"
+                android:layout_below="@id/et_confirm_password"
+                android:layout_marginTop="16dp"
+                android:hint="@string/mobile_number"
+                android:inputType="phone|number"
+                android:maxLength="10" />
+
+            <Button
+                android:id="@+id/btn_update"
+                style="@style/SolidButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@id/et_mobile"
+                android:layout_marginTop="20dp"
+                android:text="Update" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</ScrollView>

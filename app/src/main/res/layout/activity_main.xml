@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/splashBg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitStart"
+        android:src="@drawable/splash_bg" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/container_layout_margin">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/buttons_layout"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:text="@string/splash_welcome_txt"
+            android:textColor="@color/primary_txt"
+            android:textSize="28sp" />
+
+        <LinearLayout
+            android:id="@+id/buttons_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_login"
+                style="@style/StrokeButtonStyle"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:minWidth="@dimen/splash_btn_width"
+                android:text="@string/login_btn_label"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_create_new_account"
+                style="@style/SolidButtonStyle"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:minWidth="@dimen/splash_btn_width"
+                android:padding="8dp"
+                android:text="@string/get_started_btn_label"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

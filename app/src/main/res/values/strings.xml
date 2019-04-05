@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Rupee Circle</string>
+
+    <!--Titles-->
+    <string name="login_title">Login</string>
+    <string name="signup_title">Create New Account</string>
+
+    <!--Welcome messages-->
+    <string name="splash_welcome_txt">This is a small task for \nRupeeCircle</string>
+    <string name="login_welcome_txt">Hello there !\nWelcome Back</string>
+    <string name="signup_welcome_txt">Hello there !\nWelcome to you</string>
+
+
+    <!--Button labels-->
+    <string name="login_btn_label">Login</string>
+    <string name="signup_btn_label">Create Account</string>
+
+    <string name="login_label">" Login"</string>
+    <string name="signup_label">Create New Account"</string>
+
+    <string name="get_started_btn_label">Create new Account</string>
+
+    <!--Edit Text hints-->
+    <string name="email_address_hint">Email Address</string>
+    <string name="full_name_hint">Full Name</string>
+    <string name="mobile_number">Mobile No.</string>
+    <string name="password_hint">Password</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+
+
+    <!--Misc texts-->
+    <string name="no_account">Don\’t have an account?</string>
+    <string name="have_account">Have an account?</string>
+
+</resources>
