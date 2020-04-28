@@ -1,99 +1,21 @@
-image: jangrewe/gitlab-ci-android
+name: Android CI
 
-variables:
-  ANDROID_COMPILE_SDK: "28"
-  APP_NAME: "SimpleRoom"
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
-cache:
-  key: ${CI_PROJECT_ID}
-  paths:
-    - .m2/
-    - .gradle/
+jobs:
+  build:
 
-stages:
-  - build
-  - test
-  - package
+    runs-on: ubuntu-latest
 
-before_script:
-  - export GRADLE_USER_HOME=$(pwd)/.gradle
-  - chmod +x ./gradlew
-  - apt-get update -y && apt-get install wget -y
-
-
-########################################################################
-# BUILD
-
-.build_template: &build
-  stage: build
-  artifacts:
-    expire_in: 4 hours
-    paths:
-      - app/build/outputs/
-
-build:develop:
-  <<: *build
-  only:
-    - develop
-  script:
-    - ./gradlew assembleDebug
-
-build:release:
-  <<: *build
-  only:
-    - master
-  script:
-    - ./gradlew assembleRelease
-
-
-########################################################################
-# TESTS
-
-.test_template: &test
-  stage: test
-  only:
-    - master
-    - develop
-
-test:unit:
-  <<: *test
-  script:
-    - ./gradlew test
-
-########################################################################
-# PACKAGE
-
-.package_template: &package
-  before_script:
-    - export VERSION_NAME=`egrep '^[[:blank:]]+versionName[[:blank:]]'  app/build.gradle | awk '{print $2}' | sed s/\"//g`
-    - mkdir -p exported
-
-package:develop:
-  <<: *package
-  stage: package
-  environment: Development
-  only:
-    - develop
-  script:
-    - mv app/build/outputs/apk/debug/app-debug.apk ./exported/${APP_NAME}-v$VERSION_NAME-debug.apk
-  dependencies:
-    - build:develop
-  artifacts:
-    expire_in: 7 days
-    paths:
-      - exported
-
-package:release:unsigned:
-  <<: *package
-  stage: package
-  environment: Release
-  only:
-    - master
-  script:
-    - mv app/build/outputs/apk/release/app-release-unsigned.apk ./exported/${APP_NAME}-v$VERSION_NAME-release-unsigned.apk
-  dependencies:
-    - build:release
-  artifacts:
-    expire_in: 1 month
-    paths:
-      - exported
+    steps:
+    - uses: actions/checkout@v2
+    - name: set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: Build with Gradle
+      run: ./gradlew build
