@@ -8,6 +8,9 @@ on:
 
 jobs:
   build:
+    
+    outputs:
+      path: app/build/outputs
 
     runs-on: ubuntu-latest
 
@@ -21,6 +24,3 @@ jobs:
       run: chmod +x ./gradlew
     - name: Build with Gradle
       run: ./gradlew build
-    - store_artifacts:
-          path: app/build/reports
-          destination: reports
