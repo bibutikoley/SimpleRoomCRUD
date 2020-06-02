@@ -24,15 +24,16 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
       
-    - name: Run gradle tests
+    - name: Run Gradle tests
       run: ./gradlew test
     
-    - name: Assenble Project
-      run: ./gradlew assemble
+    - name: Assemble Project
+      run: ./gradlew assembleDebug
 
     - name: List artifact APK
       run: ls -la
 
+    - name: Upload a Build Artifact
     - uses: actions/upload-artifact@v2
       with:
         name: app-debug.apk
