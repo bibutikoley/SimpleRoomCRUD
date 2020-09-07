@@ -18,8 +18,7 @@ import dev.bibuti.rupeecircle.adapters.UserAdapter;
 import dev.bibuti.rupeecircle.database.models.Users;
 import dev.bibuti.rupeecircle.database.viewmodels.UserViewModel;
 
-public class ViewAllUsersActivity extends AppCompatActivity
-        implements UserAdapter.OnUserAdapterClickListener {
+public class ViewAllUsersActivity extends AppCompatActivity implements UserAdapter.OnUserAdapterClickListener {
 
     @BindView(R.id.usersRV)
     RecyclerView usersRV;
