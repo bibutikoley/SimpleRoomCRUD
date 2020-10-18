@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Trying something new.
+
         Button btn_login = findViewById(R.id.btn_login);
         Button btn_create_new_account = findViewById(R.id.btn_create_new_account);
 
