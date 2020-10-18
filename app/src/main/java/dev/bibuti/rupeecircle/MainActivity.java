@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Trying something new.
+        //Another line added.
 
         Button btn_login = findViewById(R.id.btn_login);
         Button btn_create_new_account = findViewById(R.id.btn_create_new_account);
