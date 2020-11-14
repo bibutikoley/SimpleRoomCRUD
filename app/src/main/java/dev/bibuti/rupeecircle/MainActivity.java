@@ -2,11 +2,14 @@ package dev.bibuti.rupeecircle;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Trying something new.
         //Another line added.
+        Log.d(TAG, "onCreate: Just to test workflow");
 
         Button btn_login = findViewById(R.id.btn_login);
         Button btn_create_new_account = findViewById(R.id.btn_create_new_account);
